@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1610050225 source:c:\snir\projetprogrammation\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+
+1610284970 source:c:\snir\projet programmation\partie 1 a\projetprogrammation\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+
