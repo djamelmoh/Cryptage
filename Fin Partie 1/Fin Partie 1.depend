@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1610480250 source:c:\snir\projet programmation\fin partie 1\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+
