@@ -7,28 +7,15 @@ using namespace std;
 
 int main()
 {
+    char tab[10]={};
+    int i;
 
-    string phrase;
-    int i=0,j=0;
-    char retourner[26]={};
-    cout << "Entrez phrase : ";
-    getline(cin,phrase);
+    cout<<"entre"<<endl;
+    cin.getline(tab,10);
 
-
-    for ( i = 26 ; i>-1 ; i--)
-    	{
-      	  retourner[26-i]=phrase[i];
- 	   }
-
-    for(j=0;j<27;j++)
+    for(i=0;i=10;i++)
     {
-        cout << retourner[j];
+        cout<<tab[i+2];
     }
-
-
-    return 0;
-
-
-
 
 }

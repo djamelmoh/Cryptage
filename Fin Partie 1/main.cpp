@@ -40,8 +40,14 @@ int main()
         {
             for(j=0;j<=26;j++)      //Deuxieme boucle pour parcourir l'alphabet
             {
-                if(phrase[i]==alph[j]) //If pour verifier si les carractere sont les meme
-                    phrase[i]=alph[j=j+2];      //Changement du carractere
+                if(phrase[i]==alph[j])  //If pour verifier si les carractere sont les meme
+                    phrase[i]=alph[j=j+2];  //Changement du carractere
+
+                if(phrase[i]=='y')
+                    phrase[i]='a';
+
+                if(phrase[i]=='z')
+                    phrase[i]='b';
             }
         }
 
