@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1611778761 source:c:\users\leohe\desktop\fin partie 2\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+
