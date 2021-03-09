@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+string decalePhrase(string phrase, int nbCaract);//déclaration fonction
+
+
+int main()
+{
+    struct fonct
+    {
+        string phrase;
+        string message_crypter;
+        int decalage;
+
+    };
+
+    fonct structure;
+
+    cout<<"Quel Phrase voulez vous crypter"<<endl;
+    getline(cin,structure.phrase);//entrer phrase
+
+
+    cout<<"De combien voulez vous decaler"<<endl;
+    cin>> structure.decalage;//entrer chiffre pour décaler
+
+    structure.message_crypter = decalePhrase(structure.phrase, structure.decalage);// decalage = la resultat de la fonction
+
+    cout<<" La phrase que vous avez rentre est: "<<structure.phrase<<endl;//affiche phrase
+
+    cout<<"Vous voulez un decalage de: "<<structure.decalage<<endl;//nbr de decallage phrase
+
+    cout<<" Voici votre phrase crypte et inverse : "<<structure.message_crypter<<endl;//phrase décalé et inversé
+
+
+    return 0;
+}
+
+
+string decalePhrase(string phrase, int nbCaract)//Fonction pour le cryptage en inverse
+{
+    int i=0,j=0, taille_phrase;
+    taille_phrase = phrase.length();// variable taille_phrase= taille de phrase
+    string message_crypter=phrase;//création d'une variable "message_crypter" de "phrase" 
+    for (i=taille_phrase-1; i>=0; i--) //boucle pour parcourir avec "i" et "j" //taille_phrase-1 car la dernierre lettre du mot est pris en compte 
+    {
+        message_crypter[i]=phrase[j];//affectation de la lettre en partant du bas de la variable message_crypter
+        j++;
+    }
+
+    i=0;
+
+    string phrases=phrase;
+
+    if (nbCaract>0 || nbCaract<25)//si longueur inf à 0 et sup à 25 alors
+    {
+        while (message_crypter[i] !='\0')//tant que se n'est pas egale à l'antislache 0
+        {
+            if (message_crypter[i] == ' ')//si des espaces
+            {
+                phrases[i]= ' ';
+            }
+            else
+            {
+                if (message_crypter[i] >='A' && message_crypter[i] <='Z' );//si la lettre egale à des lettre majuscule
+                {
+                    phrases[i]=(((message_crypter[i]-65)+nbCaract)%26)+65;//alors la lettre va recevoir le decallage demandé
+                }
+                if (message_crypter[i] >='a' && message_crypter[i] <='z' );//si la lettre egale à des lettre minuscule
+                {
+                    phrases[i]=(((message_crypter[i]-97)+nbCaract)%26)+97;//alors la lettre va recevoir le decallage demandé
+                }
+            }
+
+            i++;
+        }
+    }
+    return phrases;//renvoie phrase crypté
+
+}
